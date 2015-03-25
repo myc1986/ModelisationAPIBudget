@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Budget.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="BudgetStoreContainer">
+          <EntitySet Name="enregistrement" EntityType="Budget.Store.enregistrement" store:Type="Tables" Schema="monbudget" />
+          <EntitySet Name="groupe" EntityType="Budget.Store.groupe" store:Type="Tables" Schema="monbudget" />
+          <EntitySet Name="type" EntityType="Budget.Store.type" store:Type="Tables" Schema="monbudget" />
+          <EntitySet Name="allenregistrement" EntityType="Budget.Store.allenregistrement" store:Type="Views" store:Schema="monbudget" store:Name="allenregistrement">
+            <DefiningQuery>SELECT
+      `allenregistrement`.`enregistrement_id`, 
+      `allenregistrement`.`groupe_libelle`, 
+      `allenregistrement`.`type_libelle`, 
+      `allenregistrement`.`enregistrement_libelle`, 
+      `allenregistrement`.`enregistrement_valeur`, 
+      `allenregistrement`.`type_id`, 
+      `allenregistrement`.`groupe_id`
+      FROM `allenregistrement` AS `allenregistrement`</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_ENREGISTREMENT_GROUPE" Association="Budget.Store.FK_ENREGISTREMENT_GROUPE">
+            <End Role="groupe" EntitySet="groupe" />
+            <End Role="enregistrement" EntitySet="enregistrement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ENREGISTREMENT_TYPE" Association="Budget.Store.FK_ENREGISTREMENT_TYPE">
+            <End Role="type" EntitySet="type" />
+            <End Role="enregistrement" EntitySet="enregistrement" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="enregistrement">
+          <Key>
+            <PropertyRef Name="enregistrement_id" />
+          </Key>
+          <Property Name="enregistrement_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="enregistrement_libelle" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="enregistrement_valeur" Type="double" Nullable="false" />
+          <Property Name="type_id" Type="int" Nullable="false" />
+          <Property Name="group_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="groupe">
+          <Key>
+            <PropertyRef Name="groupe_id" />
+          </Key>
+          <Property Name="groupe_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="groupe_libelle" Type="varchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="type">
+          <Key>
+            <PropertyRef Name="type_id" />
+          </Key>
+          <Property Name="type_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="type_libelle" Type="varchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+      Avertissement 6002: La table/vue « def.monbudget.allenregistrement » n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.
+      -->
+        <EntityType Name="allenregistrement">
+          <Key>
+            <PropertyRef Name="enregistrement_id" />
+            <PropertyRef Name="groupe_libelle" />
+            <PropertyRef Name="type_libelle" />
+            <PropertyRef Name="enregistrement_libelle" />
+            <PropertyRef Name="enregistrement_valeur" />
+            <PropertyRef Name="type_id" />
+            <PropertyRef Name="groupe_id" />
+          </Key>
+          <Property Name="enregistrement_id" Type="int" Nullable="false" />
+          <Property Name="groupe_libelle" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="type_libelle" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="enregistrement_libelle" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="enregistrement_valeur" Type="double" Nullable="false" />
+          <Property Name="type_id" Type="int" Nullable="false" />
+          <Property Name="groupe_id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ENREGISTREMENT_GROUPE">
+          <End Role="groupe" Type="Budget.Store.groupe" Multiplicity="1" />
+          <End Role="enregistrement" Type="Budget.Store.enregistrement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="groupe">
+              <PropertyRef Name="groupe_id" />
+            </Principal>
+            <Dependent Role="enregistrement">
+              <PropertyRef Name="group_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ENREGISTREMENT_TYPE">
+          <End Role="type" Type="Budget.Store.type" Multiplicity="1" />
+          <End Role="enregistrement" Type="Budget.Store.enregistrement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="type">
+              <PropertyRef Name="type_id" />
+            </Principal>
+            <Dependent Role="enregistrement">
+              <PropertyRef Name="type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Budget" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BddBudget" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="enregistrements" EntityType="Budget.CEnregistrement" />
+          <EntitySet Name="groupes" EntityType="Budget.CGroupe" />
+          <EntitySet Name="types" EntityType="Budget.CType" />
+          <AssociationSet Name="FK_ENREGISTREMENT_GROUPE" Association="Budget.FK_ENREGISTREMENT_GROUPE">
+            <End Role="groupe" EntitySet="groupes" />
+            <End Role="enregistrement" EntitySet="enregistrements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ENREGISTREMENT_TYPE" Association="Budget.FK_ENREGISTREMENT_TYPE">
+            <End Role="type" EntitySet="types" />
+            <End Role="enregistrement" EntitySet="enregistrements" />
+          </AssociationSet>
+          <EntitySet Name="allenregistrement" EntityType="Budget.VueEnregistrements" />
+        </EntityContainer>
+        <EntityType Name="CEnregistrement">
+          <Key>
+            <PropertyRef Name="enregistrement_id" />
+          </Key>
+          <Property Name="enregistrement_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="enregistrement_libelle" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="enregistrement_valeur" Type="Double" Nullable="false" />
+          <Property Name="type_id" Type="Int32" Nullable="false" />
+          <Property Name="group_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="groupe" Relationship="Budget.FK_ENREGISTREMENT_GROUPE" FromRole="enregistrement" ToRole="groupe" />
+          <NavigationProperty Name="type" Relationship="Budget.FK_ENREGISTREMENT_TYPE" FromRole="enregistrement" ToRole="type" />
+        </EntityType>
+        <EntityType Name="CGroupe">
+          <Key>
+            <PropertyRef Name="groupe_id" />
+          </Key>
+          <Property Name="groupe_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="groupe_libelle" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="enregistrements" Relationship="Budget.FK_ENREGISTREMENT_GROUPE" FromRole="groupe" ToRole="enregistrement" />
+        </EntityType>
+        <EntityType Name="CType">
+          <Key>
+            <PropertyRef Name="type_id" />
+          </Key>
+          <Property Name="type_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="type_libelle" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="enregistrements" Relationship="Budget.FK_ENREGISTREMENT_TYPE" FromRole="type" ToRole="enregistrement" />
+        </EntityType>
+        <Association Name="FK_ENREGISTREMENT_GROUPE">
+          <End Role="groupe" Type="Budget.CGroupe" Multiplicity="1" />
+          <End Role="enregistrement" Type="Budget.CEnregistrement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="groupe">
+              <PropertyRef Name="groupe_id" />
+            </Principal>
+            <Dependent Role="enregistrement">
+              <PropertyRef Name="group_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ENREGISTREMENT_TYPE">
+          <End Role="type" Type="Budget.CType" Multiplicity="1" />
+          <End Role="enregistrement" Type="Budget.CEnregistrement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="type">
+              <PropertyRef Name="type_id" />
+            </Principal>
+            <Dependent Role="enregistrement">
+              <PropertyRef Name="type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="VueEnregistrements">
+          <Key>
+            <PropertyRef Name="enregistrement_id" />
+            <PropertyRef Name="groupe" />
+            <PropertyRef Name="type" />
+            <PropertyRef Name="enregistrement_libelle" />
+            <PropertyRef Name="enregistrement_valeur" />
+            <PropertyRef Name="type_id" />
+            <PropertyRef Name="groupe_id" />
+          </Key>
+          <Property Type="Int32" Name="enregistrement_id" Nullable="false" />
+          <Property Type="String" Name="groupe" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="type" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="enregistrement_libelle" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="enregistrement_valeur" Nullable="false" />
+          <Property Type="Int32" Name="type_id" Nullable="false" />
+          <Property Type="Int32" Name="groupe_id" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BudgetStoreContainer" CdmEntityContainer="BddBudget">
+          <EntitySetMapping Name="enregistrements">
+            <EntityTypeMapping TypeName="Budget.CEnregistrement">
+              <MappingFragment StoreEntitySet="enregistrement">
+                <ScalarProperty Name="enregistrement_id" ColumnName="enregistrement_id" />
+                <ScalarProperty Name="enregistrement_libelle" ColumnName="enregistrement_libelle" />
+                <ScalarProperty Name="enregistrement_valeur" ColumnName="enregistrement_valeur" />
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="group_id" ColumnName="group_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="groupes">
+            <EntityTypeMapping TypeName="Budget.CGroupe">
+              <MappingFragment StoreEntitySet="groupe">
+                <ScalarProperty Name="groupe_id" ColumnName="groupe_id" />
+                <ScalarProperty Name="groupe_libelle" ColumnName="groupe_libelle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="types">
+            <EntityTypeMapping TypeName="Budget.CType">
+              <MappingFragment StoreEntitySet="type">
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="type_libelle" ColumnName="type_libelle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="allenregistrement">
+            <EntityTypeMapping TypeName="Budget.VueEnregistrements">
+              <MappingFragment StoreEntitySet="allenregistrement">
+                <ScalarProperty Name="groupe_id" ColumnName="groupe_id" />
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="enregistrement_valeur" ColumnName="enregistrement_valeur" />
+                <ScalarProperty Name="enregistrement_libelle" ColumnName="enregistrement_libelle" />
+                <ScalarProperty Name="type" ColumnName="type_libelle" />
+                <ScalarProperty Name="groupe" ColumnName="groupe_libelle" />
+                <ScalarProperty Name="enregistrement_id" ColumnName="enregistrement_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

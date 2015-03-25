@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="1ac4126b-1ce8-46d0-ba2a-c0ce91e24fad" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="62e7f668-d8b2-4fba-88f7-aa09d5640ac9" name="Metier" />
+    <layer Id="39706bbc-d2bb-4fba-9171-ec728ceb1b0a" name="Services">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="be0a961b-8907-46c2-9563-ffbd982a77c9" direction="Bidirectional">
+          <layerMoniker Id="62e7f668-d8b2-4fba-88f7-aa09d5640ac9" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="2384323e-49b9-4c35-8575-6dd4abcd1cfd" name="ServicesWebs">
+          <references>
+            <reference Id="90285bf9-5835-4ec9-b885-de5bcab46bdb" name="SevicesWebs">
+              <ArtifactNode Label="SevicesWebs" Category="CodeSchema_Project" Id="(Assembly=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/Services/SevicesWebs&quot;)">
+                <Category Ref="SolutionFolder" />
+              </ArtifactNode>
+            </reference>
+          </references>
+        </layer>
+      </childLayers>
+      <references>
+        <reference Id="7febcfaf-b569-45db-b50c-83a9149055d8" name="Services">
+          <ArtifactNode Label="Services" Category="CodeSchema_Project" Id="(Assembly=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/Services&quot;)">
+            <Category Ref="SolutionFolder" />
+          </ArtifactNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="5406bbb1-632d-4bdd-bc93-8e1dbd1ab663" name="IHM">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="aae74471-0179-48e4-9ed4-d2d3cb1ac8df" direction="Bidirectional">
+          <layerMoniker Id="39706bbc-d2bb-4fba-9171-ec728ceb1b0a" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="cb0cab29-b826-4d20-93b2-866a2c762fb6" name="IHM">
+          <ArtifactNode Label="IHM" Category="CodeSchema_Project" Id="(Assembly=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/IHM&quot;)">
+            <Category Ref="SolutionFolder" />
+          </ArtifactNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="ad2e82de-4a56-49b3-aa58-47c3f0d5bcf3" name="DAL" />
+  </layers>
+</layerModel>

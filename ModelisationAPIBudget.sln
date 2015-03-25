@@ -10,6 +10,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{21CDF6
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ihms", "Ihms", "{9496D079-C745-40B8-9056-CF77C0C93AFA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{C160B56B-99E2-475A-9D98-3E310EB64612}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SevicesWebs", "SevicesWebs", "{E35BC02A-11DC-4E91-AA49-101057ED8F6E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{40B7DD6E-3E73-4E38-83BD-3CDD6D40EA5B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "winForm", "winForm", "{F919F7EF-533E-44DD-9867-EEB76205A19C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonBudget", "MonBudget\MonBudget.csproj", "{98FD24BE-987B-4C62-ADFB-FF4D61F055D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modeles", "Modeles", "{79A9CF62-662D-4022-B299-13B39968DF61}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +34,17 @@ Global
 		{E38B3281-09D3-4B70-AF75-0F30C2877978}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E38B3281-09D3-4B70-AF75-0F30C2877978}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E38B3281-09D3-4B70-AF75-0F30C2877978}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98FD24BE-987B-4C62-ADFB-FF4D61F055D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98FD24BE-987B-4C62-ADFB-FF4D61F055D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98FD24BE-987B-4C62-ADFB-FF4D61F055D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98FD24BE-987B-4C62-ADFB-FF4D61F055D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F919F7EF-533E-44DD-9867-EEB76205A19C} = {9496D079-C745-40B8-9056-CF77C0C93AFA}
+		{E35BC02A-11DC-4E91-AA49-101057ED8F6E} = {C160B56B-99E2-475A-9D98-3E310EB64612}
+		{98FD24BE-987B-4C62-ADFB-FF4D61F055D8} = {F919F7EF-533E-44DD-9867-EEB76205A19C}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2993877024a14f1292ef685f5e580402" Name="Diagramme1">
+        <EntityTypeShape EntityType="Budget.CEnregistrement" Width="1.875" PointX="3.375" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Budget.CGroupe" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Budget.CType" Width="1.5" PointX="6.25" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="Budget.FK_ENREGISTREMENT_GROUPE" ManuallyRouted="false" />
+        <AssociationConnector Association="Budget.FK_ENREGISTREMENT_TYPE" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Budget.VueEnregistrements" Width="2.5" PointX="3.625" PointY="3.5" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
