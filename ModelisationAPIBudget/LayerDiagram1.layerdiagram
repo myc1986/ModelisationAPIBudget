@@ -1,46 +1,146 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="1ac4126b-1ce8-46d0-ba2a-c0ce91e24fad" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
   <layers>
-    <layer Id="62e7f668-d8b2-4fba-88f7-aa09d5640ac9" name="Metier" />
-    <layer Id="39706bbc-d2bb-4fba-9171-ec728ceb1b0a" name="Services">
-      <dependencyToLayers>
-        <dependencyFromLayerToLayer Id="be0a961b-8907-46c2-9563-ffbd982a77c9" direction="Bidirectional">
-          <layerMoniker Id="62e7f668-d8b2-4fba-88f7-aa09d5640ac9" />
-        </dependencyFromLayerToLayer>
-      </dependencyToLayers>
-      <childLayers>
-        <layer Id="2384323e-49b9-4c35-8575-6dd4abcd1cfd" name="ServicesWebs">
-          <references>
-            <reference Id="90285bf9-5835-4ec9-b885-de5bcab46bdb" name="SevicesWebs">
-              <ArtifactNode Label="SevicesWebs" Category="CodeSchema_Project" Id="(Assembly=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/Services/SevicesWebs&quot;)">
-                <Category Ref="SolutionFolder" />
-              </ArtifactNode>
-            </reference>
-          </references>
-        </layer>
-      </childLayers>
-      <references>
-        <reference Id="7febcfaf-b569-45db-b50c-83a9149055d8" name="Services">
-          <ArtifactNode Label="Services" Category="CodeSchema_Project" Id="(Assembly=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/Services&quot;)">
-            <Category Ref="SolutionFolder" />
-          </ArtifactNode>
-        </reference>
-      </references>
-    </layer>
     <layer Id="5406bbb1-632d-4bdd-bc93-8e1dbd1ab663" name="IHM">
       <dependencyToLayers>
-        <dependencyFromLayerToLayer Id="aae74471-0179-48e4-9ed4-d2d3cb1ac8df" direction="Bidirectional">
-          <layerMoniker Id="39706bbc-d2bb-4fba-9171-ec728ceb1b0a" />
+        <dependencyFromLayerToLayer Id="4bdc0524-0646-443c-99a5-39494964cbac" direction="Forward">
+          <layerMoniker Id="ad2e82de-4a56-49b3-aa58-47c3f0d5bcf3" />
         </dependencyFromLayerToLayer>
       </dependencyToLayers>
       <references>
-        <reference Id="cb0cab29-b826-4d20-93b2-866a2c762fb6" name="IHM">
-          <ArtifactNode Label="IHM" Category="CodeSchema_Project" Id="(Assembly=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/IHM&quot;)">
-            <Category Ref="SolutionFolder" />
+        <reference Id="d024ea7a-48fb-4143-92a8-947baca46520" name="Form1.cs">
+          <ArtifactNode Label="Form1.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/MonBudget.csproj&quot; File=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/Form1.cs&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=MonBudget Namespace=MonBudget Type=Form1)" Label="Form1" Category="CodeSchema_Class">
+            <LinkCategory Ref="Contains" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+        <reference Id="8dfc196a-e457-46f4-b726-93d16e7f3358" name="Form1.Designer.cs">
+          <ArtifactNode Label="Form1.Designer.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/MonBudget.csproj&quot; File=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/Form1.Designer.cs&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=MonBudget Namespace=MonBudget Type=Form1)" Label="Form1" Category="CodeSchema_Class">
+            <LinkCategory Ref="Contains" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+        <reference Id="9cec59f4-02f9-4b4a-ad1c-9436da065c4f" name="Form1.resx">
+          <ArtifactNode Label="Form1.resx" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/MonBudget.csproj&quot; File=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/Form1.resx&quot;)">
+            <Category Ref="File" />
           </ArtifactNode>
         </reference>
       </references>
     </layer>
-    <layer Id="ad2e82de-4a56-49b3-aa58-47c3f0d5bcf3" name="DAL" />
+    <layer Id="ad2e82de-4a56-49b3-aa58-47c3f0d5bcf3" name="DAL">
+      <references>
+        <reference Id="57d90b25-c46a-45be-99cc-684afdb28a3f" name="BudgetModele.edmx">
+          <ArtifactNode Label="BudgetModele.edmx" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/MonBudget.csproj&quot; File=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/BudgetModele.edmx&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=MonBudget Namespace=MonBudget Type=BddBudget)" Label="BddBudget" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=MonBudget Namespace=MonBudget Type=CEnregistrement)" Label="CEnregistrement" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=MonBudget Namespace=MonBudget Type=CGroupe)" Label="CGroupe" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=MonBudget Namespace=MonBudget Type=CType)" Label="CType" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=MonBudget Namespace=MonBudget Type=VueEnregistrements)" Label="VueEnregistrements" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+        <reference Id="375183a5-d0e2-4f2b-9ff5-7be45810ce18" name="BudgetModele.Context.tt">
+          <ArtifactNode Label="BudgetModele.Context.tt" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/MonBudget.csproj&quot; File=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/BudgetModele.Context.tt&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=MonBudget Namespace=MonBudget Type=BddBudget)" Label="BddBudget" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+        <reference Id="0dcfd8db-823d-46ec-9782-a338ea6e6ba8" name="BudgetModele.Context.cs">
+          <ArtifactNode Label="BudgetModele.Context.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/MonBudget.csproj&quot; File=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/BudgetModele.Context.cs&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=MonBudget Namespace=MonBudget Type=BddBudget)" Label="BddBudget" Category="CodeSchema_Class">
+            <LinkCategory Ref="Contains" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+        <reference Id="421ca844-8535-41df-a9bf-1c57a894f7f4" name="BudgetModele.Designer.cs">
+          <ArtifactNode Label="BudgetModele.Designer.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/MonBudget.csproj&quot; File=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/BudgetModele.Designer.cs&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+        </reference>
+        <reference Id="92581d99-19d7-41e9-bacd-bcc9c556a648" name="BudgetModele.edmx.diagram">
+          <ArtifactNode Label="BudgetModele.edmx.diagram" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/MonBudget.csproj&quot; File=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/BudgetModele.edmx.diagram&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+        </reference>
+        <reference Id="2f50c318-1a99-464e-b5ef-8b754ee6eddb" name="BudgetModele.tt">
+          <ArtifactNode Label="BudgetModele.tt" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/MonBudget.csproj&quot; File=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/BudgetModele.tt&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=MonBudget Namespace=MonBudget Type=CEnregistrement)" Label="CEnregistrement" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=MonBudget Namespace=MonBudget Type=CGroupe)" Label="CGroupe" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=MonBudget Namespace=MonBudget Type=CType)" Label="CType" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=MonBudget Namespace=MonBudget Type=VueEnregistrements)" Label="VueEnregistrements" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+        <reference Id="c4639ce0-fb50-485b-9e6e-8dba23f76e74" name="BudgetModele.cs">
+          <ArtifactNode Label="BudgetModele.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/MonBudget.csproj&quot; File=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/BudgetModele.cs&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+        </reference>
+        <reference Id="6000e78c-2fd5-4472-9604-efd1b4e2c3bf" name="CEnregistrement.cs">
+          <ArtifactNode Label="CEnregistrement.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/MonBudget.csproj&quot; File=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/CEnregistrement.cs&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=MonBudget Namespace=MonBudget Type=CEnregistrement)" Label="CEnregistrement" Category="CodeSchema_Class">
+            <LinkCategory Ref="Contains" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+        <reference Id="2cffa7a7-1f5b-4e5f-9e95-42d140258da2" name="CGroupe.cs">
+          <ArtifactNode Label="CGroupe.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/MonBudget.csproj&quot; File=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/CGroupe.cs&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=MonBudget Namespace=MonBudget Type=CGroupe)" Label="CGroupe" Category="CodeSchema_Class">
+            <LinkCategory Ref="Contains" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+        <reference Id="55b11cd0-0900-449e-9ba5-144325d70fd6" name="CType.cs">
+          <ArtifactNode Label="CType.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/MonBudget.csproj&quot; File=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/CType.cs&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=MonBudget Namespace=MonBudget Type=CType)" Label="CType" Category="CodeSchema_Class">
+            <LinkCategory Ref="Contains" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+        <reference Id="228e7ab5-2be0-4357-91c9-c1388b26ef8b" name="VueEnregistrements.cs">
+          <ArtifactNode Label="VueEnregistrements.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/MonBudget.csproj&quot; File=&quot;$(PersonalUri)/Visual Studio 2012/Projects/ModelisationAPIBudget/MonBudget/VueEnregistrements.cs&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=MonBudget Namespace=MonBudget Type=VueEnregistrements)" Label="VueEnregistrements" Category="CodeSchema_Class">
+            <LinkCategory Ref="Contains" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
   </layers>
 </layerModel>

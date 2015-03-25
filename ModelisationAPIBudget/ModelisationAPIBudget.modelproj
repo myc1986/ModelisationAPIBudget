@@ -40,4 +40,10 @@
       <DependentUpon>LayerDiagram1.layerdiagram</DependentUpon>
     </Validate>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MonBudget\MonBudget.csproj">
+      <Name>MonBudget</Name>
+      <Project>{98fd24be-987b-4c62-adfb-ff4d61f055d8}</Project>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

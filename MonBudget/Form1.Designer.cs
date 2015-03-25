@@ -378,10 +378,6 @@
         private System.Windows.Forms.ComboBox cmb_type;
         private System.Windows.Forms.Button btn_ajouter;
         private System.Windows.Forms.GroupBox grp_tableauCroiseDynamique;
-        private System.Windows.Forms.DataGridViewTextBoxColumn groupelibelleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typelibelleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn enregistrementlibelleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn enregistrementvaleurDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource cEnregistrementBindingSource;
         private System.Windows.Forms.TextBox txt_libelle;
         private System.Windows.Forms.Label lbl_libelle;

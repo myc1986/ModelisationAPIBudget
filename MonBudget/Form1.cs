@@ -200,17 +200,12 @@ namespace MonBudget
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 maForm = new Form2();
-            maForm.ShowDialog();
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Form2 uneForm = new Form2();
 
-            uneForm.ShowDialog();
-
-            
         }
 
         private void tdc_budget_Load(object sender, EventArgs e)

@@ -524,7 +524,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>=SUM(Fields!enregistrement_valeur.Value, fields!groupe.Value)</Value>
+                                <Value>=SUM(Fields!enregistrement_valeur.Value)</Value>
                                 <Style />
                               </TextRun>
                             </TextRuns>
@@ -543,6 +543,7 @@
                           <PaddingBottom>2pt</PaddingBottom>
                         </Style>
                       </Textbox>
+                      <rd:Selected>true</rd:Selected>
                     </CellContents>
                   </TablixHeader>
                   <TablixMembers>
@@ -684,7 +685,6 @@
                           <PaddingBottom>2pt</PaddingBottom>
                         </Style>
                       </Textbox>
-                      <rd:Selected>true</rd:Selected>
                     </CellContents>
                   </TablixHeader>
                   <TablixMembers>
