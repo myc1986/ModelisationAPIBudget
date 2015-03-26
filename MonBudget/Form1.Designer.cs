@@ -29,9 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.VueEnregistrementsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dtg_enregistrement = new System.Windows.Forms.DataGridView();
+            this.enregistrementidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cEnregistrementBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grp_enregistrement = new System.Windows.Forms.GroupBox();
             this.txt_montant = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -48,27 +55,24 @@
             this.grp_tableauCroiseDynamique = new System.Windows.Forms.GroupBox();
             this.tdc_budget = new Microsoft.Reporting.WinForms.ReportViewer();
             this.grp_evolution = new System.Windows.Forms.GroupBox();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.rpv_important = new Microsoft.Reporting.WinForms.ReportViewer();
             this.grp_important = new System.Windows.Forms.GroupBox();
-            this.VueEnregistrementsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.enregistrementidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEnregistrementBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vueEnregistrementsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            ((System.ComponentModel.ISupportInitialize)(this.VueEnregistrementsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_enregistrement)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cEnregistrementBindingSource)).BeginInit();
             this.grp_enregistrement.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.grp_tableauCroiseDynamique.SuspendLayout();
             this.grp_evolution.SuspendLayout();
             this.grp_important.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.VueEnregistrementsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cEnregistrementBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vueEnregistrementsBindingSource1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // VueEnregistrementsBindingSource
+            // 
+            this.VueEnregistrementsBindingSource.DataSource = typeof(MonBudget.VueEnregistrements);
             // 
             // dtg_enregistrement
             // 
@@ -88,6 +92,55 @@
             this.dtg_enregistrement.Size = new System.Drawing.Size(605, 155);
             this.dtg_enregistrement.TabIndex = 0;
             this.dtg_enregistrement.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dtg_enregistrement_MouseClick);
+            // 
+            // enregistrementidDataGridViewTextBoxColumn
+            // 
+            this.enregistrementidDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.enregistrementidDataGridViewTextBoxColumn.DataPropertyName = "enregistrement_id";
+            this.enregistrementidDataGridViewTextBoxColumn.HeaderText = "Identifiant";
+            this.enregistrementidDataGridViewTextBoxColumn.Name = "enregistrementidDataGridViewTextBoxColumn";
+            this.enregistrementidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.enregistrementidDataGridViewTextBoxColumn.Width = 78;
+            // 
+            // groupeDataGridViewTextBoxColumn
+            // 
+            this.groupeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.groupeDataGridViewTextBoxColumn.DataPropertyName = "groupe";
+            this.groupeDataGridViewTextBoxColumn.HeaderText = "Groupe";
+            this.groupeDataGridViewTextBoxColumn.Name = "groupeDataGridViewTextBoxColumn";
+            this.groupeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.groupeDataGridViewTextBoxColumn.Width = 67;
+            // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "type";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            this.typeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.typeDataGridViewTextBoxColumn.Width = 56;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "enregistrement_libelle";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Libellé";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn1.Width = 62;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "enregistrement_valeur";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Montant réel";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn2.Width = 91;
+            // 
+            // cEnregistrementBindingSource
+            // 
+            this.cEnregistrementBindingSource.DataSource = typeof(MonBudget.CEnregistrement);
             // 
             // grp_enregistrement
             // 
@@ -233,9 +286,9 @@
             // 
             // tdc_budget
             // 
-            reportDataSource3.Name = "tableau";
-            reportDataSource3.Value = this.VueEnregistrementsBindingSource;
-            this.tdc_budget.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource1.Name = "tableau";
+            reportDataSource1.Value = this.VueEnregistrementsBindingSource;
+            this.tdc_budget.LocalReport.DataSources.Add(reportDataSource1);
             this.tdc_budget.LocalReport.ReportEmbeddedResource = "MonBudget.Report1.rdlc";
             this.tdc_budget.Location = new System.Drawing.Point(7, 19);
             this.tdc_budget.Name = "tdc_budget";
@@ -253,16 +306,25 @@
             this.grp_evolution.TabStop = false;
             this.grp_evolution.Text = "Evolution";
             // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Location = new System.Drawing.Point(9, 19);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(250, 158);
+            this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.Visible = false;
+            // 
             // rpv_important
             // 
-            reportDataSource4.Name = "tableauImportant";
-            reportDataSource4.Value = this.VueEnregistrementsBindingSource;
-            this.rpv_important.LocalReport.DataSources.Add(reportDataSource4);
+            reportDataSource2.Name = "tableauImportant";
+            reportDataSource2.Value = this.VueEnregistrementsBindingSource;
+            this.rpv_important.LocalReport.DataSources.Add(reportDataSource2);
             this.rpv_important.LocalReport.ReportEmbeddedResource = "MonBudget.Report2.rdlc";
             this.rpv_important.Location = new System.Drawing.Point(6, 18);
             this.rpv_important.Name = "rpv_important";
             this.rpv_important.Size = new System.Drawing.Size(220, 156);
             this.rpv_important.TabIndex = 0;
+            this.rpv_important.Visible = false;
             // 
             // grp_important
             // 
@@ -274,69 +336,9 @@
             this.grp_important.TabStop = false;
             this.grp_important.Text = "Important";
             // 
-            // VueEnregistrementsBindingSource
-            // 
-            this.VueEnregistrementsBindingSource.DataSource = typeof(MonBudget.VueEnregistrements);
-            // 
-            // enregistrementidDataGridViewTextBoxColumn
-            // 
-            this.enregistrementidDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.enregistrementidDataGridViewTextBoxColumn.DataPropertyName = "enregistrement_id";
-            this.enregistrementidDataGridViewTextBoxColumn.HeaderText = "Identifiant";
-            this.enregistrementidDataGridViewTextBoxColumn.Name = "enregistrementidDataGridViewTextBoxColumn";
-            this.enregistrementidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.enregistrementidDataGridViewTextBoxColumn.Width = 78;
-            // 
-            // groupeDataGridViewTextBoxColumn
-            // 
-            this.groupeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.groupeDataGridViewTextBoxColumn.DataPropertyName = "groupe";
-            this.groupeDataGridViewTextBoxColumn.HeaderText = "Groupe";
-            this.groupeDataGridViewTextBoxColumn.Name = "groupeDataGridViewTextBoxColumn";
-            this.groupeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.groupeDataGridViewTextBoxColumn.Width = 67;
-            // 
-            // typeDataGridViewTextBoxColumn
-            // 
-            this.typeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.typeDataGridViewTextBoxColumn.DataPropertyName = "type";
-            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
-            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
-            this.typeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.typeDataGridViewTextBoxColumn.Width = 56;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "enregistrement_libelle";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Libellé";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.dataGridViewTextBoxColumn1.Width = 62;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "enregistrement_valeur";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Montant réel";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.dataGridViewTextBoxColumn2.Width = 91;
-            // 
-            // cEnregistrementBindingSource
-            // 
-            this.cEnregistrementBindingSource.DataSource = typeof(MonBudget.CEnregistrement);
-            // 
             // vueEnregistrementsBindingSource1
             // 
             this.vueEnregistrementsBindingSource1.DataSource = typeof(MonBudget.VueEnregistrements);
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Location = new System.Drawing.Point(9, 19);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(250, 158);
-            this.reportViewer1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -351,15 +353,15 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.VueEnregistrementsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_enregistrement)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cEnregistrementBindingSource)).EndInit();
             this.grp_enregistrement.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.grp_tableauCroiseDynamique.ResumeLayout(false);
             this.grp_evolution.ResumeLayout(false);
             this.grp_important.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.VueEnregistrementsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cEnregistrementBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vueEnregistrementsBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
